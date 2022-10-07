@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+
+.separador{
+    padding-top: 10rem;
+    padding-left: 5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.distanciador{
+padding-top: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.presentacion {
+    font-size: 4rem;
+    color: #333333;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nombre {
+    font-size: 7rem;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.titulo1 {
+    font-size: 5rem;
+    padding-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo2 {
+    padding-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.perfil{
+    width: 20rem;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border: solid 5px black;
+}
+
+
+.tecno{
+    max-width: 150px;
+    max-height: 110px;
+    padding: 1em;
+}
+
+.img-boton{
+    max-width: 2em;
+}
+
+.carrusel{
+    max-width: 60em;
+    margin: auto;
+}
+
+.img-carrusel{
+    max-width: 60em;
+}
+
+.contenedor-parrafo{
+    padding-top: 1em;
+    padding-left: 10em;
+    font-size: 1.2em;
 }

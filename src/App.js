@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+// COMPONENTES PROPIOS
+import Navegacion from './componentes/navegacion.js' //NAVBAR
+import Presentacion from './componentes/presetacion.js' // PRESENTACION
+import Portafolio from './componentes/portafolio.js' // PORTAFOLIO
+import SobreMi from './componentes/sobreMi.js' // SOBRE MI
+import Cv from './componentes/cv.js' // CURRICULUM
+import Tecnologias from './componentes/tecnologias';
+
+// COMPONENTES BOOTSTRAP
+import Container from 'react-bootstrap/Container';
+
+
+
+// APLICACION
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='home'>
+
+      <Navegacion/>
+
+    <div className='container'>
+    <Container>
+
+      <Presentacion/>
+
+      <Portafolio/>
+
+      <SobreMi/> 
+      
+      <Tecnologias/>
+
+      <Cv/>
+
+      </Container>
+
+      </div>
     </div>
   );
 }
