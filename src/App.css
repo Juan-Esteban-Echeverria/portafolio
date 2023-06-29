@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+
+.scrollmargin{
+  scroll-margin-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img-nav{
+  width: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.primera-seccion{
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*----------------------------------------*/
+
+.presentacion{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 80vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hi{
+  font-size: 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.name{
+  font-size: 4rem;
+}
+
+.contenedor {
+  color: #0f0f0f;
+  font-size: 4rem;
+  display: flex;
+}
+
+.animacion {
+  text-transform: capitalize;
+  margin-left: 0.2em;
+  height: 100px;
+  overflow:hidden;
+}
+
+.animacion > div > div {
+  padding: 0 0.75rem;
+  height: 100px;
+  margin-bottom: 2.81rem;
+  display:inline-block;
+}
+
+.animacion div:first-child {
+  animation: text-animation 8s infinite;
+}
+
+.primero div {
+  background-color:#f0DB4F;
+}
+.segundo div {
+  background-color:#61DBFB;
+}
+.tercero div {
+  background-color:#81BF97;
+}
+
+
+@keyframes text-animation {
+  0% {margin-top: -0rem;}
+  10% {margin-top: -0rem;}
+  20% {margin-top: -9rem;}
+  30% {margin-top: -9rem;}
+  40% {margin-top: -18rem;}
+  60% {margin-top: -18rem;}
+  70% {margin-top: -9rem;}
+  80% {margin-top: -9rem;}
+  90% {margin-top: -0rem;}
+  100% {margin-top: -0rem;}
+}
+
+/*---------------------------------------------------------*/
+
+.carrusel{
+  width: 50vw;
+  min-height: 55vh;
+  max-height: 50vh;
+}
+
+.img-carrusel{
+  width: 100%;
+  min-height: 55vh;
+  max-height: 55vh;
+}
+
+.img-boton-link{
+  width: 2em;
+}
+
+.boton-link:hover .img-boton-link{
+  filter: invert();
+}
+
+.tecnologia{
+  border: solid 5px #f0DB4F;
+}
+
+.logo-tecnologia{
+    max-width: 8em;
+    max-height: 110px;
+    padding: 1em;
+    transition: transform 0.3s ease;
+}
+
+.logo-tecnologia:hover{
+  transform: scale(120%);
+}
+
+
+@media (max-width: 768px) {
+
+  .presentacion{
+    height: 60vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hi{
+    font-size: 2rem;
   }
+  
+  .name{
+    font-size: 2rem;
+  }
+
+  .contenedor {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+
+  .animacion {
+    height: 50px;
+  }
+
+  /*---------------------------*/
+  
+  .carrusel{
+    width: 93vw;
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+
+  .img-carrusel{
+    width: 100%;
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+
+  /*-------------------------------------*/
+
 }
