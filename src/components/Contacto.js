@@ -1,22 +1,21 @@
 import React from "react";
-
-import {Boton} from './Boton.js'
+import { FileText, Mail } from 'lucide-react';
 
 function Contacto(){
     return(
-        <div className='text-center scrollmargin mb-5 mt-5' id='contacto'>
-            <h2 className="mb-4">Currículum</h2>
-                <div className="d-flex d-lg-block justify-content-around">
-                    {/*MIRAR CV*/}
-                    <a href='https://drive.google.com/drive/folders/1mrH34HsyUny3lAsdpACMpGLam8y5H4VZ?usp=sharing' target='blank'>
-                    <Boton asunto='Mirar Cv' tamaño='btn-lg border-5 mx-0 mx-lg-5'/> 
-                    </a>
-                    {/*MAIL DE CONTACTO*/}
-                    <a href='mailto:juanecheverriadev@gmail.com'>
-                    <Boton asunto='Contáctame!' tamaño='btn-lg border-5 mx-0 mx-lg-5'/> 
-                    </a>
+        <footer className='contact-section section-anchor' id='contacto'>
+            <div className='page-width contact-content'>
+                <div>
+                    <p className='eyebrow'>¿Tienes un proyecto en mente?</p>
+                    <h2>Hagamos que tu sitio avance<span>.</span></h2>
                 </div>
-        </div>
+                <div className='contact-links'>
+                    <a className='button button-light' href='mailto:juanecheverriadev@gmail.com'><Mail className='action-icon' aria-hidden='true' />Escríbeme</a>
+                    <a href='https://drive.google.com/drive/folders/1mrH34HsyUny3lAsdpACMpGLam8y5H4VZ?usp=sharing' target='_blank' rel='noreferrer'><FileText className='action-icon' aria-hidden='true' />Ver currículum</a>
+                </div>
+                <div className='footer-meta'><span>Juan Echeverría · Desarrollador web</span><a href='https://www.linkedin.com/in/jeecheverria/' target='_blank' rel='noreferrer'><img className='action-icon' src={require('../images/Linkedin.png')} alt='' aria-hidden='true' />LinkedIn</a></div>
+            </div>
+        </footer>
     )
 }
 

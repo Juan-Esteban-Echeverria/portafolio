@@ -1,66 +1,97 @@
 import React from 'react'
 
-// COMPONENTES PROPIOS
-import Carrusel from './Carrusel.js';
+const proyectos = [
+        {
+                nombre: 'Spa Roy Sothers',
+                url: 'https://sparoysothers.cl/',
+                categoria: 'Spa y bienestar',
+                descripcion: 'Una experiencia digital para una marca con identidad propia.',
+                contexto: 'Sitio de spa y bienestar que presenta la identidad de Spa Roy Sothers y su oferta de servicios.',
+                clase: 'project-spar',
+                captura: false
+        },
+        {
+                nombre: 'Valor Máximo',
+                url: 'https://valormaximo.com/',
+                categoria: 'Consultoría · SAP y GIS',
+                descripcion: 'Soluciones especializadas para utilities y gestión de activos.',
+                contexto: 'Consultoría en soluciones SAP y ESRI para utilities, gestión de activos y procesos operacionales.',
+                clase: 'project-valor'
+        },
+        {
+                nombre: 'MAS Analytics',
+                url: 'https://masanalytics.com/',
+                categoria: 'Datos e inteligencia artificial',
+                descripcion: 'Estrategia, datos e inteligencia artificial para transformar organizaciones.',
+                contexto: 'Servicios de estrategia, ingeniería de datos, analítica e inteligencia artificial para organizaciones.',
+                clase: 'project-mas'
+        },
+        {
+                nombre: 'Ordóñez Abogados',
+                url: 'https://obh.cl/',
+                categoria: 'Servicios legales',
+                descripcion: 'Presencia digital para un estudio jurídico con foco empresarial.',
+                contexto: 'Estudio jurídico con asesoría laboral, empresarial y penal para empresas y particulares.',
+                clase: 'project-obh'
+        }
+];
 
-// SECCION PORTAFOLIO
 function Portafolio(){
   return(
-    <div id='portafolio' className='scrollmargin'>
-        <div>
-            <h1 className='text-center'>Portafolio</h1>
-        </div>
-
-        <div className='d-flex my-5'>
-            <Carrusel titulo='DEVSAFIO'
-                    ruta1="devsafio1"
-                    ruta2="devsafio2"
-                    ruta3="devsafio3"
-                    texto=' Proyecto web para la empresa DLAB que pretende ser un puente entre los talentos digitales 
-                            y las empresas TI. Para cumplir con este objetivo, se solicitó a la Incubadora Desafío-Latam 
-                            crear una plataforma capaz de gestionar los usuarios de aquellos talentos que buscan trabajo en 
-                            el área de tecnología, para luego poner a disposición las respectivas pruebas técnicas solicitadas 
-                            por las empresas y generar un perfil Job-Ready que los certifique en sus futuras postulaciones.'
-                    tecnologia1='Javascript - React'
-                    tecnologia2='PostgreSQL - Sequelize'
-                    tecnologia3='Node.js - Express.js'
-                    empresa='dlab-team/'
-                    link='ctd4-backend'/>
-        </div>
-
-        <div className='d-flex my-5'>
-            <Carrusel titulo='UROFF'
-                    ruta1="uroff1"
-                    ruta2="uroff2"
-                    ruta3="uroff3"
-                    texto=' Plataforma que permite a los propietarios de diversos espacios de trabajo, administrar y
-                            configurar sus espacios desde una plataforma segura para posteriormente ofrecerlos a traves 
-                            de la plataforma marketplace. Luego los usuarios de la plataforma podran filtrar la oferta de 
-                            espacios segun ubicación, fecha, precio y categoría.'
-                    tecnologia1='React - Vite'
-                    tecnologia2='TypeScript - Node.js'
-                    tecnologia3='MongoDB - Next.js'
-                    empresa='Juan-Esteban-Echeverria/'
-                    link='uroff-marketplace'/>
-        </div>
-
-        <div className='d-flex my-5'>
-            <Carrusel titulo='APEX SHARE'
-                    ruta1="apex1"
-                    ruta2="apex2"
-                    ruta3="apex3"
-                    texto=' Proyecto final del BootCamp Desarrollador FullStack Javascript de Desafío Latam, 
-                            en donde se creó una aplicación web capaz de registrar y logear usuarios de forma segura, 
-                            hacer consultas una API pública para filtrar las estadísticas de los usuarios en un determinado juego 
-                            (Apex Legends) y posteriormente almacenar información datos en una base de datos de PostgreSQL.'
-                    tecnologia1='Javascript'
-                    tecnologia2='PostgreSQL'
-                    tecnologia3='Node.js - Express.js'
-                    empresa='Juan-Esteban-Echeverria/'
-                    link='proyecto-final'/>
-        </div>
-
-    </div>
+                <section id='portafolio' className='projects-section section-anchor'>
+                        <div className='page-width'>
+                                <div className='section-heading'>
+                                        <div>
+                                                <p className='eyebrow'>Trabajo seleccionado</p>
+                                                <h2>Proyectos en producción<span>.</span></h2>
+                                        </div>
+                                        <p className='section-intro'>Sitios reales, hechos para marcas y equipos que necesitan crecer en digital.</p>
+                                </div>
+                                <div className='project-grid'>
+                                        {proyectos.map((proyecto) => (
+                                                <article className='project-card' key={proyecto.nombre}>
+                                                        <a className={`project-preview ${proyecto.clase}`} href={proyecto.url} target='_blank' rel='noreferrer' aria-label={`Visitar ${proyecto.nombre}`}>
+                                                                <div className='project-placeholder'>
+                                                                        <span className='project-placeholder-kicker'>{proyecto.categoria}</span>
+                                                                        <strong>{proyecto.nombre}</strong>
+                                                                        <span className='project-placeholder-url'>{proyecto.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+                                                                </div>
+                                                                {proyecto.captura !== false && <img src={`https://api.microlink.io/?url=${encodeURIComponent(proyecto.url)}&meta=false&screenshot=true&embed=screenshot.url`} alt={`Vista previa del sitio ${proyecto.nombre}`} loading='lazy' onError={(event) => { event.currentTarget.style.display = 'none'; }} onLoad={(event) => { if (event.currentTarget.naturalWidth < 20) event.currentTarget.style.display = 'none'; }} />}
+                                                                <span className='preview-open' aria-hidden='true'>↗</span>
+                                                        </a>
+                                                        <div className='project-details'>
+                                                                <div>
+                                                                        <p className='project-category'>{proyecto.categoria}</p>
+                                                                        <h3>{proyecto.nombre}</h3>
+                                                                        <p className='project-description'>{proyecto.descripcion}</p>
+                                                                </div>
+                                                                <a className='project-link' href={proyecto.url} target='_blank' rel='noreferrer' aria-label={`Abrir ${proyecto.nombre} en una nueva pestaña`}>↗</a>
+                                                        </div>
+                                                </article>
+                                        ))}
+                                </div>
+                                <div className='project-context'>
+                                        <div className='context-heading'>
+                                                <p className='eyebrow'>Más información</p>
+                                                <h3>Contexto de cada sitio</h3>
+                                        </div>
+                                        <div className='context-list'>
+                                                {proyectos.map((proyecto) => (
+                                                        <details className='context-item' key={proyecto.nombre}>
+                                                                <summary>
+                                                                        <span>{proyecto.nombre}</span>
+                                                                        <span className='context-category'>{proyecto.categoria}</span>
+                                                                </summary>
+                                                                <div className='context-content'>
+                                                                        <p>{proyecto.contexto}</p>
+                                                                        <a href={proyecto.url} target='_blank' rel='noreferrer'>Visitar sitio <span aria-hidden='true'>↗</span></a>
+                                                                </div>
+                                                        </details>
+                                                ))}
+                                        </div>
+                                </div>
+                        </div>
+                </section>
   )
 }
 

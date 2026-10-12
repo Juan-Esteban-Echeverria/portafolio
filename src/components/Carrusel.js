@@ -48,15 +48,13 @@ function Carrusel(props) {
               </Col>
             </Row>
             <Row className='ps-1 ps-lg-5 fw-bold d-block d-lg-flex'>
-              <Col>               
-                <p>
-                  <h4 className='ps-1 ps-lg-2'>Tecnologías:</h4>  
-                  <ul>
+              <Col>
+                <h4 className='ps-1 ps-lg-2'>Tecnologías:</h4>
+                <ul>
                     <li>{props.tecnologia1}</li>
                     <li>{props.tecnologia2}</li>
                     <li>{props.tecnologia3}</li>
-                  </ul> 
-                </p>
+                </ul>
               </Col>
               <Col className='d-flex justify-content-start justify-content-lg-end align-items-end mt-lg-1 mt-4'>            
                 <BotonLink asunto="Mirar el Código" link={props.link} empresa={props.empresa}/> 
